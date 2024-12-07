@@ -62,7 +62,7 @@ const CustomerDashboard: React.FC = () => {
     }
   };
 
-  const sortArray = (data: Account[], key = "creationDate", order = "asc") => {
+  const sortArray = (data: Account[]) => {
     let updatedAccounts = [...data];
     updatedAccounts = updatedAccounts.sort((a, b) => {
       const { key, direction } = sortConfig;
