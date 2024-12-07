@@ -13,14 +13,15 @@ import {
 import { transferFunds } from '../../actions/fundTransferActions';
 import { useAppDispatch } from '../../hooks/index';
 import { RootState } from '../store';
+// import Modal from '../../shared/modal';
 
 const FundTransferForm: React.FC = () => {
   const dispatch = useAppDispatch();
   const { fromAccount, toAccount, status } = useSelector((state: RootState) => state.fundTransfer);
-// const [showModal, setModalStatus] = useState(status);
+  const [showModal, setModalStatus] = useState(false);
   useEffect(() => {
     if(status.length)
-    alert(status)
+      setModalStatus(true)
   },[status])
   
   const formik = useFormik({
@@ -40,6 +41,7 @@ const FundTransferForm: React.FC = () => {
 
   return (<>
     <h3 className="title">Fund Transfer</h3>
+    {/* {showModal ? <Modal status={status} /> : null} */}
     <form className="form-container" onSubmit={formik.handleSubmit}>
       <Box mb={1} p={0}>
         <Grid2 container>
@@ -84,7 +86,7 @@ const FundTransferForm: React.FC = () => {
           </Grid2>
           <Box className="actions">
             <Button variant="outlined" onClick={() => formik.resetForm()} type="reset">Reset</Button>
-            <Button variant="outlined" type="submit">Submit</Button>
+            <Button variant="outlined" className='submit' type="submit">Submit</Button>
           </Box>
         </Grid2>
       </Box>

@@ -1,6 +1,8 @@
 .form-container {
-    width: 80%;
+    width: 50%;
     margin: 0 auto;
+    border: 1px solid #ddd;
+    padding: 20px;
 }
 
 .form-error {
@@ -11,4 +13,16 @@
 }
 .actions {
     margin: 0 auto;
+}
+.title{
+    text-align: center;
+}
+div{
+    padding: 10px;
+}
+.dropdown{
+    height: 30px;
+}
+.submit {
+    margin-left: 15px;
 }
