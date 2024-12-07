@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import mortgageSlice from "./reducers/mortgage";
+import authReducer from './reducers/authSlice';
 
 const store = configureStore({
   reducer: {
     mortGageReducer: mortgageSlice,
+    auth: authReducer,
   },
 });
 

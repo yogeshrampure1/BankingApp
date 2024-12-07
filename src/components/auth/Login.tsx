@@ -7,7 +7,7 @@ import {
   loginSuccess,
   loginFailure,
   logout,
-} from "../../store/authslice";
+} from "../store/reducers/authSlice";
 import { RootState } from "../store/store";
 import { validationSchema } from "../../utils/validation/LoginValidation";
 import styles from "./login.module.css";
@@ -27,9 +27,15 @@ const Login = () => {
     validationSchema,
     onSubmit: async (values) => {
       dispatch(loginStart()); 
-      try {
-        const response = await axios.post("/api/login", values);
-        dispatch(loginSuccess({ username: response.data.username }));
+      try { 
+        const response = await axios.get("http://localhost:3000/login");
+        let val = response.data?.filter(val => val.username === values.username && val.password === values.password)
+        if(val[0]) {
+          dispatch(loginSuccess({ username: response.data.username }));
+        } else {
+          dispatch(loginFailure("Login failed."));
+        }
+        
       } catch (error: any) {
         dispatch(loginFailure(error.message || "Login failed."));
       }
