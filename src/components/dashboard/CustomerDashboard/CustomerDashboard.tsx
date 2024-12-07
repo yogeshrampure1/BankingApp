@@ -119,6 +119,7 @@ const CustomerDashboard: React.FC = () => {
     if (sortConfig.key === key && sortConfig.direction === "asc") {
       direction = "desc";
     }
+    setCurrentPage(1);
     setSortConfig({ key, direction });
   };
 
