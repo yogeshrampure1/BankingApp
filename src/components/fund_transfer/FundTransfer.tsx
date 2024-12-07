@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import './FundTransfer.css';
@@ -16,8 +16,13 @@ import { RootState } from '../store';
 
 const FundTransferForm: React.FC = () => {
   const dispatch = useAppDispatch();
-  const { fromAccount, toAccount } = useSelector((state: RootState) => state.fundTransfer);
-
+  const { fromAccount, toAccount, status } = useSelector((state: RootState) => state.fundTransfer);
+// const [showModal, setModalStatus] = useState(status);
+  useEffect(() => {
+    if(status.length)
+    alert(status)
+  },[status])
+  
   const formik = useFormik({
     initialValues: {
       amount: '',
@@ -78,7 +83,7 @@ const FundTransferForm: React.FC = () => {
             value={formik.values.remarks} />
           </Grid2>
           <Box className="actions">
-            <Button variant="outlined" type="reset">Reset</Button>
+            <Button variant="outlined" onClick={() => formik.resetForm()} type="reset">Reset</Button>
             <Button variant="outlined" type="submit">Submit</Button>
           </Box>
         </Grid2>
