@@ -62,38 +62,8 @@ const CustomerDashboard: React.FC = () => {
     }
   };
 
-  const debouncedSearch = debounce((query: string) => {
-    const filteredData = accounts.filter(
-      (account) =>
-        account.type.toLowerCase().includes(query.toLowerCase()) ||
-        account.accountNumber.includes(query)
-    );
-    setCurrentPage(1);
-    setFilteredAccounts(
-      filteredData.slice(
-        (currentPage - 1) * rowsPerPage,
-        currentPage * rowsPerPage
-      )
-    );
-    setTotalPages(Math.ceil(filteredData.length / rowsPerPage));
-  }, 500);
-
-  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>): void => {
-    setSearch(e.target.value);
-    debouncedSearch(e.target.value);
-  };
-
-  const handleSort = (key: SortKey): void => {
-    let direction: SortDirection = "asc";
-    if (sortConfig.key === key && sortConfig.direction === "asc") {
-      direction = "desc";
-    }
-    setSortConfig({ key, direction });
-  };
-
-  useEffect(() => {
-    let updatedAccounts = [...accounts];
-
+  const sortArray = (data: Account[], key = "creationDate", order = "asc") => {
+    let updatedAccounts = [...data];
     updatedAccounts = updatedAccounts.sort((a, b) => {
       const { key, direction } = sortConfig;
 
@@ -119,19 +89,62 @@ const CustomerDashboard: React.FC = () => {
       return 0;
     });
 
-    setFilteredAccounts(
-      updatedAccounts.slice(
-        (currentPage - 1) * rowsPerPage,
-        currentPage * rowsPerPage
-      )
+    return updatedAccounts;
+  };
+
+  const debouncedSearch = debounce((query: string) => {
+    let filteredData = accounts.filter(
+      (account) =>
+        account.type.toLowerCase().includes(query.toLowerCase()) ||
+        account.accountNumber.includes(query)
     );
 
     setFilteredAccounts(
-      updatedAccounts.slice(
+      filteredData.slice(
         (currentPage - 1) * rowsPerPage,
         currentPage * rowsPerPage
       )
     );
+    setCurrentPage(1);
+    setTotalPages(Math.ceil(filteredData.length / rowsPerPage));
+  }, 500);
+
+  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>): void => {
+    setSearch(e.target.value);
+    debouncedSearch(e.target.value);
+  };
+
+  const handleSort = (key: SortKey): void => {
+    let direction: SortDirection = "asc";
+    if (sortConfig.key === key && sortConfig.direction === "asc") {
+      direction = "desc";
+    }
+    setSortConfig({ key, direction });
+  };
+
+  useEffect(() => {
+    let updatedAccounts = [...accounts];
+    if (!search) {
+      updatedAccounts = sortArray(updatedAccounts);
+      setFilteredAccounts(
+        updatedAccounts.slice(
+          (currentPage - 1) * rowsPerPage,
+          currentPage * rowsPerPage
+        )
+      );
+    } else {
+      let filteredData = accounts.filter(
+        (account) =>
+          account.type.toLowerCase().includes(search.toLowerCase()) ||
+          account.accountNumber.includes(search)
+      );
+      setFilteredAccounts(
+        filteredData.slice(
+          (currentPage - 1) * rowsPerPage,
+          currentPage * rowsPerPage
+        )
+      );
+    }
   }, [accounts, sortConfig, search, currentPage, rowsPerPage]);
 
   const handlePageChange = (pageNumber: number): void => {
