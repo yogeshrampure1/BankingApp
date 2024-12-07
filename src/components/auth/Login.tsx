@@ -1,5 +1,5 @@
  
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux"; 
 import { useFormik } from "formik";
 import axios from "axios";
 import {
@@ -12,9 +12,11 @@ import { RootState } from "../store/store";
 import { validationSchema } from "../../utils/validation/LoginValidation";
 import styles from "./login.module.css";
 import { useEffect } from "react";
- 
+import { useNavigate } from "react-router";
+
 const Login = () => {
   const dispatch = useDispatch();
+  let navigate = useNavigate();
   const { isAuthenticated, loading, error } = useSelector(
     (state: RootState) => state.auth
   );
@@ -34,6 +36,7 @@ const Login = () => {
         console.log(val)
         if(val[0]) {
           dispatch(loginSuccess({ username: response.data.username }));
+          navigate('/dashboard')
         } else {
           dispatch(loginFailure("Login failed."));
         }
@@ -46,6 +49,7 @@ const Login = () => {
 
   useEffect(() => {
     sessionStorage.setItem('isAuthenticated',isAuthenticated)
+
     console.log("login",isAuthenticated)
   },[isAuthenticated])
 
