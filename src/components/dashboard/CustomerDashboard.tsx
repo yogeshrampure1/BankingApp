@@ -4,4 +4,4 @@ const CustomerDashboard = () => {
   return <div>CustsomerDashboard</div>;
 };
 
-export default CustsomerDashboard;
+export default CustomerDashboard;
