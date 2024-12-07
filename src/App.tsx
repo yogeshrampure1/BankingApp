@@ -3,7 +3,7 @@ import Login from "./components/auth/Login";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-//test
+
 function App() {
   return (
     <BrowserRouter>
