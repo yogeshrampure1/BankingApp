@@ -18,7 +18,7 @@ import { useNavigate } from 'react-router-dom';
 
 const FundTransferForm: React.FC = () => {
   const dispatch = useAppDispatch();
-  const { fromAccount, toAccount, transactionStatus } = useSelector((state: RootState) => state.fundTransfer);
+  const { fromAccount, toAccount, transactionStatus = '' } = useSelector((state: RootState) => state.fundTransfer);
   const [showDialog, setShowDialog] = useState(false);
   const navigate = useNavigate();
   useEffect(() => {
@@ -46,6 +46,7 @@ const FundTransferForm: React.FC = () => {
 
   const onModalClose = () => {
     setShowDialog(false);
+    dispatch({type: 'fundTransfer/resetStatus'})
     formik.resetForm();
   };
 
