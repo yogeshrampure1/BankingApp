@@ -5,6 +5,11 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   plugins: [react()],
   test: {
+    environment: 'jsdom', // Simulates the browser environment
+    setupFiles: './src/setupTests.ts', // Path to test setup file
+    globals: true, // Allows using global test functions like `describe` and `it`
+  },
+
     setupFiles: ["./src/setupTests.ts"],
     environment: "jsdom", // Use jsdom to simulate browser for React
     globals: true, // Enables globals like `describe`, `it`, `expect`
@@ -12,4 +17,4 @@ export default defineConfig({
       reporter: ["text", "json", "html"], // Code coverage options
     },
   },
-});
+);
