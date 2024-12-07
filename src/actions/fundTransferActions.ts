@@ -6,6 +6,18 @@ interface TransferData {
     remarks: string;
 }
 
+export const getAccountData = createAsyncThunk<void, any>(
+    'fundTransfer/transferFunds',
+    async (custId, {dispatch}) => {
+        const response = await axios.get('http://localhost:5000/accounts/');
+        const fromAccount = response.data[0].accountNumber;
+        const toAccount = response.data[1].accountNumber;
+        dispatch({type: 'fundTransfer/getAccountData', payload: {
+            fromAccount,
+            toAccount
+        }})
+    }
+);
 export const transferFunds = createAsyncThunk<void, TransferData>(
     'fundTransfer/transferFunds',
     async (transferData: { amount: number; remarks: string }, {dispatch}) => {

@@ -10,8 +10,8 @@ interface FundTransferState {
 }
 
 const initialState: FundTransferState = {
-  fromAccount: '1234',
-  toAccount: '5678',
+  fromAccount: '',
+  toAccount: '',
   amount: 0,
   remarks: '',
   transactionStatus: '',
@@ -22,6 +22,11 @@ const fundTransferSlice = createSlice({
   name: 'fundTransfer',
   initialState,
   reducers: {
+    getAccountData: (state, action) => {
+      const {fromAccount, toAccount} = action.payload;
+      state.fromAccount = fromAccount;
+      state.toAccount = toAccount;
+    },
     transferFunds: (state, action) => {
         const {status, message} = action.payload;
         state.transactionStatus = status;
@@ -30,5 +35,5 @@ const fundTransferSlice = createSlice({
   },
 });
 
-export const { transferFunds } = fundTransferSlice.actions;
+export const { getAccountData, transferFunds } = fundTransferSlice.actions;
 export default fundTransferSlice.reducer;

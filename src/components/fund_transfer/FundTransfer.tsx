@@ -10,7 +10,7 @@ import {
   FormLabel,
   Button,
 } from '@mui/material';
-import { transferFunds } from '../../actions/fundTransferActions';
+import { getAccountData, transferFunds } from '../../actions/fundTransferActions';
 import { useAppDispatch } from '../../hooks/index';
 import { RootState } from '../store';
 import Modal from '../../shared/modal';
@@ -19,6 +19,10 @@ const FundTransferForm: React.FC = () => {
   const dispatch = useAppDispatch();
   const { fromAccount, toAccount, transactionStatus } = useSelector((state: RootState) => state.fundTransfer);
   const [showDialog, setShowDialog] = useState(false);
+  useEffect(() => {
+    dispatch(getAccountData(''));
+  },[]);
+
   useEffect(() => {
     if(transactionStatus.length)
       setShowDialog(true)
@@ -34,7 +38,6 @@ const FundTransferForm: React.FC = () => {
       remarks: Yup.string(),
     }),
     onSubmit: (values) => {
-      console.log("=form values=", values);
       dispatch(transferFunds({ amount: Number(values.amount), remarks: values.remarks }));
     },
   });
@@ -55,7 +58,7 @@ const FundTransferForm: React.FC = () => {
           </Grid2>
           <Grid2 size={6}>
             <Select size={'small'} className='form-input' name="fromAccount" value={fromAccount} disabled>
-              <option value="1234">1234(Savings)</option>
+              <option value={fromAccount}>123456789(Savings)</option>
             </Select>
           </Grid2>
           <Grid2 size={6}>
@@ -63,7 +66,7 @@ const FundTransferForm: React.FC = () => {
           </Grid2>
           <Grid2 size={6}>
             <Select size={'small'} className='form-input' name="toAccount" value={toAccount} disabled>
-              <option value="5678">5678(Mortgage)</option>
+              <option value={toAccount}>567891234(Mortgage)</option>
             </Select>
           </Grid2>
           <Grid2 size={6}>

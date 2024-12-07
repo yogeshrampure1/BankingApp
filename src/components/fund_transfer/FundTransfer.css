@@ -1,5 +1,5 @@
 .form-container {
-    width: 50%;
+    width: 60%;
     margin: 0 auto;
     border: 1px solid #ddd;
     padding: 20px;
@@ -19,7 +19,7 @@ div{
 }
 .form-input{
     height: 30px !important;
-    width: 200px !important;  
+    width: 250px !important;  
 }
 .submit {
     margin-left: 15px !important;
