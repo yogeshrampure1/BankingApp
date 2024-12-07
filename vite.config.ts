@@ -5,6 +5,7 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   plugins: [react()],
   test: {
+    setupFiles: ["./src/setupTests.ts"],
     environment: "jsdom", // Use jsdom to simulate browser for React
     globals: true, // Enables globals like `describe`, `it`, `expect`
     coverage: {
