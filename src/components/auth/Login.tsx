@@ -31,7 +31,7 @@ const Login = () => {
     onSubmit: async (values) => {
       dispatch(loginStart()); 
       try { 
-        const response = await axios.get("http://localhost:3000/login");
+        const response = await axios.get("http://localhost:5000/login");
         let val = response.data?.filter(val => val.username === values.username && val.password === values.password)
         console.log(val)
         if(val[0]) {
