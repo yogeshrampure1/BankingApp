@@ -1,6 +1,6 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import ReactDOM from "react-dom";
-import styles from "./modal.module.css";
+import styles from "./modal.module.css"; 
 import { RootState } from "../components/store";
 import { useSelector } from "react-redux";
 
@@ -9,6 +9,9 @@ export type ModalStatus = "success" | "error" | "warning";
 interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
+  children: ReactNode;
+  title?: string;
+  status?: ModalStatus;
 }
 
 const Modal: React.FC<ModalProps> = ({
