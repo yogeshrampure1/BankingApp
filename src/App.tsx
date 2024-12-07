@@ -10,7 +10,7 @@ import CustomerDashboard from "./components/dashboard/CustomerDashboard/Customer
 import FundTransferForm from "./components/fund_transfer/FundTransfer";
 
 function App() {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(true);
   return (
     <Router>
       <Routes>
