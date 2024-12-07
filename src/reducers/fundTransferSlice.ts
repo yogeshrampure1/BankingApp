@@ -31,9 +31,12 @@ const fundTransferSlice = createSlice({
         const {status, message} = action.payload;
         state.transactionStatus = status;
         state.message = message;
+    },
+    resetStatus: (state) => {
+      state.transactionStatus = '';
     }
   },
 });
 
-export const { getAccountData, transferFunds } = fundTransferSlice.actions;
+export const { getAccountData, transferFunds, resetStatus } = fundTransferSlice.actions;
 export default fundTransferSlice.reducer;
