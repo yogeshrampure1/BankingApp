@@ -139,7 +139,9 @@ const CustomerDashboard: React.FC = () => {
 
   return (
     <div className="container-fluid mt-4 px-4">
-      <h2 className="mb-4">Account Summary</h2>
+      <div className="d-flex justify-content-center align-items-center">
+        <h2 className="mb-4">Account Summary</h2>
+      </div>
 
       <div className="d-flex justify-content-between align-items-center mb-4">
         <InputGroup className="w-25">
