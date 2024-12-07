@@ -139,7 +139,7 @@ const CustomerDashboard: React.FC = () => {
   };
 
   const handleTransfer = () => {
-    navigate("/fund-transfer");
+    navigate("/fundtransfer");
   };
 
   useEffect(() => {
