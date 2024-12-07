@@ -1,0 +1,17 @@
+{
+    "accounts": [
+      {
+        "id": 1,
+        "accountNumber": "1234",
+        "type": "Savings",
+        "balance": 1000000
+      },
+      {
+        "id": 2,
+        "accountNumber": "5678",
+        "type": "Mortgage",
+        "balance": -500000
+      }
+    ]
+  }
+  

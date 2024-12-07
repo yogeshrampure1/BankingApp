@@ -1,0 +1,14 @@
+.form-container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.form-error {
+    color: #f00;
+}
+.dropdown {
+    width: 170px;  
+}
+.actions {
+    margin: 0 auto;
+}
