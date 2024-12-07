@@ -1,19 +1,40 @@
+import React, { useState } from 'react';
 import Login from "./components/auth/Login";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
+import PrivateRoute from "./routes/PrivateRoute";
+import Header from "./components/header/Header"
 import "./App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 
 
 function App() {
+  const [isAuthenticated,setIsAuthenticated] = useState(true);
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="login" element={<Login />} />
-       
-        <Route path="/" element={<Login />} />
-      </Routes>
-
-    </BrowserRouter>
+    <Router>
+    <Routes>
+    {/* <Route path="/login" element={<Login onLogin={() => setIsAuthenticated(true)} />} /> */}
+      <Route path="/login" element={<Login  />} />
+      <Route path="/" element={<Login  />} />
+    
+      <Route
+        path="/dashboard"
+        element={
+          <PrivateRoute isAuthenticated={isAuthenticated}>
+            <Header userName='Sundar'/>
+          </PrivateRoute>
+        }
+      />
+       <Route
+        path="/fundtransfer"
+        element={
+          <PrivateRoute isAuthenticated={isAuthenticated}>
+            'fundtransfer'
+          </PrivateRoute>
+        }
+      />
+    </Routes>
+  </Router>
   );
 }
 
