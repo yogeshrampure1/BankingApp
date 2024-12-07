@@ -1,8 +1,6 @@
 {
-
-  "references": [
-  
-  ],
+  "files": [],
+  "references": [{ "path": "./tsconfig.app.json" }],
   "compilerOptions": {
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
@@ -14,7 +12,7 @@
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     "incremental": true,
     "plugins": [
       {

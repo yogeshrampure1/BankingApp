@@ -6,6 +6,8 @@ import PrivateRoute from "./routes/PrivateRoute";
 import Header from "./components/header/Header";
 import "./App.css";
 
+import CustomerDashboard from "./components/dashboard/CustomerDashboard/CustomerDashboard";
+
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   return (
@@ -19,7 +21,7 @@ function App() {
           path="/dashboard"
           element={
             <PrivateRoute isAuthenticated={isAuthenticated}>
-              <Header userName="Sundar" />
+              <CustomerDashboard />
             </PrivateRoute>
           }
         />
