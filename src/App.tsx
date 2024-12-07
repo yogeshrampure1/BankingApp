@@ -22,7 +22,10 @@ function App() {
           path="/dashboard"
           element={
             <PrivateRoute isAuthenticated={isAuthenticated}>
-              <CustomerDashboard />
+              <>
+                <Header userName="Sundar" />
+                <CustomerDashboard />
+              </>
             </PrivateRoute>
           }
         />
@@ -30,7 +33,10 @@ function App() {
           path="/fundtransfer"
           element={
             <PrivateRoute isAuthenticated={isAuthenticated}>
-              <FundTransferForm />
+              <>
+                <Header userName="Sundar" />
+                <FundTransferForm />
+              </>
             </PrivateRoute>
           }
         />
