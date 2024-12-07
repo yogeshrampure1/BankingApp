@@ -1,0 +1,504 @@
+{
+  "accounts": [
+    {
+      "id": 1,
+      "customerId": 101,
+      "accountNumber": "123456789",
+      "name": "Jane Doe",
+      "type": "Savings",
+      "balance": 5000,
+      "creationDate": "2020-05-15T08:30:00Z",
+      "lastTransactionDate": "2024-12-05T09:00:00Z"
+    },
+    {
+      "id": 2,
+      "customerId": 101,
+      "accountNumber": "567891234",
+      "name": "Jane Doe",
+      "type": "Mortgage",
+      "balance": -15000,
+      "creationDate": "2020-06-20T09:00:00Z",
+      "lastTransactionDate": "2024-11-30T10:00:00Z"
+    },
+    {
+      "id": 3,
+      "customerId": 101,
+      "accountNumber": "234567891",
+      "name": "Jane Doe",
+      "type": "Savings",
+      "balance": 7000,
+      "creationDate": "2021-01-10T10:00:00Z",
+      "lastTransactionDate": "2024-12-02T11:30:00Z"
+    },
+    {
+      "id": 4,
+      "customerId": 101,
+      "accountNumber": "536782918",
+      "name": "Jane Doe",
+      "type": "Mortgage",
+      "balance": -20000,
+      "creationDate": "2021-02-15T14:00:00Z",
+      "lastTransactionDate": "2024-11-28T13:45:00Z"
+    },
+    {
+      "id": 5,
+      "customerId": 101,
+      "accountNumber": "985674839",
+      "name": "Jane Doe",
+      "type": "Savings",
+      "balance": 5000,
+      "creationDate": "2020-05-15T08:30:00Z",
+      "lastTransactionDate": "2024-12-05T09:00:00Z"
+    },
+    {
+      "id": 6,
+      "customerId": 101,
+      "accountNumber": "875649287",
+      "name": "Jane Doe",
+      "type": "Mortgage",
+      "balance": -15000,
+      "creationDate": "2020-06-20T09:00:00Z",
+      "lastTransactionDate": "2024-11-30T10:00:00Z"
+    },
+    {
+      "id": 7,
+      "customerId": 101,
+      "accountNumber": "564738927",
+      "name": "Jane Doe",
+      "type": "Savings",
+      "balance": 7000,
+      "creationDate": "2021-01-10T10:00:00Z",
+      "lastTransactionDate": "2024-12-02T11:30:00Z"
+    },
+    {
+      "id": 8,
+      "customerId": 101,
+      "accountNumber": "756374658",
+      "name": "Jane Doe",
+      "type": "Mortgage",
+      "balance": -20000,
+      "creationDate": "2021-02-15T14:00:00Z",
+      "lastTransactionDate": "2024-11-28T13:45:00Z"
+    },
+    {
+      "id": 9,
+      "customerId": 101,
+      "accountNumber": "123456789",
+      "name": "Jane Doe",
+      "type": "Savings",
+      "balance": 5000,
+      "creationDate": "2020-05-15T08:30:00Z",
+      "lastTransactionDate": "2024-12-05T09:00:00Z"
+    },
+    {
+      "id": 10,
+      "customerId": 101,
+      "accountNumber": "567891234",
+      "name": "Jane Doe",
+      "type": "Mortgage",
+      "balance": -15000,
+      "creationDate": "2020-06-20T09:00:00Z",
+      "lastTransactionDate": "2024-11-30T10:00:00Z"
+    },
+    {
+      "id": 11,
+      "customerId": 101,
+      "accountNumber": "234567891",
+      "name": "Jane Doe",
+      "type": "Savings",
+      "balance": 7000,
+      "creationDate": "2021-01-10T10:00:00Z",
+      "lastTransactionDate": "2024-12-02T11:30:00Z"
+    },
+    {
+      "id": 12,
+      "customerId": 101,
+      "accountNumber": "536782918",
+      "name": "Jane Doe",
+      "type": "Mortgage",
+      "balance": -20000,
+      "creationDate": "2021-02-15T14:00:00Z",
+      "lastTransactionDate": "2024-11-28T13:45:00Z"
+    },
+    {
+      "id": 13,
+      "customerId": 101,
+      "accountNumber": "985674839",
+      "name": "Jane Doe",
+      "type": "Savings",
+      "balance": 5000,
+      "creationDate": "2020-05-15T08:30:00Z",
+      "lastTransactionDate": "2024-12-05T09:00:00Z"
+    },
+    {
+      "id": 14,
+      "customerId": 101,
+      "accountNumber": "875649287",
+      "name": "Jane Doe",
+      "type": "Mortgage",
+      "balance": -15000,
+      "creationDate": "2020-06-20T09:00:00Z",
+      "lastTransactionDate": "2024-11-30T10:00:00Z"
+    },
+    {
+      "id": 15,
+      "customerId": 101,
+      "accountNumber": "564738927",
+      "name": "Jane Doe",
+      "type": "Savings",
+      "balance": 7000,
+      "creationDate": "2021-01-10T10:00:00Z",
+      "lastTransactionDate": "2024-12-02T11:30:00Z"
+    },
+    {
+      "id": 16,
+      "customerId": 101,
+      "accountNumber": "756374658",
+      "name": "Jane Doe",
+      "type": "Mortgage",
+      "balance": -20000,
+      "creationDate": "2021-02-15T14:00:00Z",
+      "lastTransactionDate": "2024-11-28T13:45:00Z"
+    },
+    {
+      "id": 17,
+      "customerId": 101,
+      "accountNumber": "123456789",
+      "name": "Jane Doe",
+      "type": "Savings",
+      "balance": 5000,
+      "creationDate": "2020-05-15T08:30:00Z",
+      "lastTransactionDate": "2024-12-05T09:00:00Z"
+    },
+    {
+      "id": 18,
+      "customerId": 101,
+      "accountNumber": "567891234",
+      "name": "Jane Doe",
+      "type": "Mortgage",
+      "balance": -15000,
+      "creationDate": "2020-06-20T09:00:00Z",
+      "lastTransactionDate": "2024-11-30T10:00:00Z"
+    },
+    {
+      "id": 19,
+      "customerId": 101,
+      "accountNumber": "234567891",
+      "name": "Jane Doe",
+      "type": "Savings",
+      "balance": 7000,
+      "creationDate": "2021-01-10T10:00:00Z",
+      "lastTransactionDate": "2024-12-02T11:30:00Z"
+    },
+    {
+      "id": 20,
+      "customerId": 101,
+      "accountNumber": "536782918",
+      "name": "Jane Doe",
+      "type": "Mortgage",
+      "balance": -20000,
+      "creationDate": "2021-02-15T14:00:00Z",
+      "lastTransactionDate": "2024-11-28T13:45:00Z"
+    },
+    {
+      "id": 21,
+      "customerId": 101,
+      "accountNumber": "985674839",
+      "name": "Jane Doe",
+      "type": "Savings",
+      "balance": 5000,
+      "creationDate": "2020-05-15T08:30:00Z",
+      "lastTransactionDate": "2024-12-05T09:00:00Z"
+    },
+    {
+      "id": 22,
+      "customerId": 101,
+      "accountNumber": "875649287",
+      "name": "Jane Doe",
+      "type": "Mortgage",
+      "balance": -15000,
+      "creationDate": "2020-06-20T09:00:00Z",
+      "lastTransactionDate": "2024-11-30T10:00:00Z"
+    },
+    {
+      "id": 23,
+      "customerId": 101,
+      "accountNumber": "564738927",
+      "name": "Jane Doe",
+      "type": "Savings",
+      "balance": 7000,
+      "creationDate": "2021-01-10T10:00:00Z",
+      "lastTransactionDate": "2024-12-02T11:30:00Z"
+    },
+    {
+      "id": 24,
+      "customerId": 101,
+      "accountNumber": "756374658",
+      "name": "Jane Doe",
+      "type": "Mortgage",
+      "balance": -20000,
+      "creationDate": "2021-02-15T14:00:00Z",
+      "lastTransactionDate": "2024-11-28T13:45:00Z"
+    },
+    {
+      "id": 25,
+      "customerId": 101,
+      "accountNumber": "123456789",
+      "name": "Jane Doe",
+      "type": "Savings",
+      "balance": 5000,
+      "creationDate": "2020-05-15T08:30:00Z",
+      "lastTransactionDate": "2024-12-05T09:00:00Z"
+    },
+    {
+      "id": 26,
+      "customerId": 101,
+      "accountNumber": "567891234",
+      "name": "Jane Doe",
+      "type": "Mortgage",
+      "balance": -15000,
+      "creationDate": "2020-06-20T09:00:00Z",
+      "lastTransactionDate": "2024-11-30T10:00:00Z"
+    },
+    {
+      "id": 27,
+      "customerId": 101,
+      "accountNumber": "234567891",
+      "name": "Jane Doe",
+      "type": "Savings",
+      "balance": 7000,
+      "creationDate": "2021-01-10T10:00:00Z",
+      "lastTransactionDate": "2024-12-02T11:30:00Z"
+    },
+    {
+      "id": 28,
+      "customerId": 101,
+      "accountNumber": "536782918",
+      "name": "Jane Doe",
+      "type": "Mortgage",
+      "balance": -20000,
+      "creationDate": "2021-02-15T14:00:00Z",
+      "lastTransactionDate": "2024-11-28T13:45:00Z"
+    },
+    {
+      "id": 29,
+      "customerId": 101,
+      "accountNumber": "985674839",
+      "name": "Jane Doe",
+      "type": "Savings",
+      "balance": 5000,
+      "creationDate": "2020-05-15T08:30:00Z",
+      "lastTransactionDate": "2024-12-05T09:00:00Z"
+    },
+    {
+      "id": 30,
+      "customerId": 101,
+      "accountNumber": "875649287",
+      "name": "Jane Doe",
+      "type": "Mortgage",
+      "balance": -15000,
+      "creationDate": "2020-06-20T09:00:00Z",
+      "lastTransactionDate": "2024-11-30T10:00:00Z"
+    },
+    {
+      "id": 31,
+      "customerId": 101,
+      "accountNumber": "564738927",
+      "name": "Jane Doe",
+      "type": "Savings",
+      "balance": 7000,
+      "creationDate": "2021-01-10T10:00:00Z",
+      "lastTransactionDate": "2024-12-02T11:30:00Z"
+    },
+    {
+      "id": 32,
+      "customerId": 101,
+      "accountNumber": "756374658",
+      "name": "Jane Doe",
+      "type": "Mortgage",
+      "balance": -20000,
+      "creationDate": "2021-02-15T14:00:00Z",
+      "lastTransactionDate": "2024-11-28T13:45:00Z"
+    },
+    {
+      "id": 33,
+      "customerId": 101,
+      "accountNumber": "123456789",
+      "name": "Jane Doe",
+      "type": "Savings",
+      "balance": 5000,
+      "creationDate": "2020-05-15T08:30:00Z",
+      "lastTransactionDate": "2024-12-05T09:00:00Z"
+    },
+    {
+      "id": 34,
+      "customerId": 101,
+      "accountNumber": "567891234",
+      "name": "Jane Doe",
+      "type": "Mortgage",
+      "balance": -15000,
+      "creationDate": "2020-06-20T09:00:00Z",
+      "lastTransactionDate": "2024-11-30T10:00:00Z"
+    },
+    {
+      "id": 35,
+      "customerId": 101,
+      "accountNumber": "234567891",
+      "name": "Jane Doe",
+      "type": "Savings",
+      "balance": 7000,
+      "creationDate": "2021-01-10T10:00:00Z",
+      "lastTransactionDate": "2024-12-02T11:30:00Z"
+    },
+    {
+      "id": 36,
+      "customerId": 101,
+      "accountNumber": "536782918",
+      "name": "Jane Doe",
+      "type": "Mortgage",
+      "balance": -20000,
+      "creationDate": "2021-02-15T14:00:00Z",
+      "lastTransactionDate": "2024-11-28T13:45:00Z"
+    },
+    {
+      "id": 37,
+      "customerId": 101,
+      "accountNumber": "985674839",
+      "name": "Jane Doe",
+      "type": "Savings",
+      "balance": 5000,
+      "creationDate": "2020-05-15T08:30:00Z",
+      "lastTransactionDate": "2024-12-05T09:00:00Z"
+    },
+    {
+      "id": 38,
+      "customerId": 101,
+      "accountNumber": "875649287",
+      "name": "Jane Doe",
+      "type": "Mortgage",
+      "balance": -15000,
+      "creationDate": "2020-06-20T09:00:00Z",
+      "lastTransactionDate": "2024-11-30T10:00:00Z"
+    },
+    {
+      "id": 39,
+      "customerId": 101,
+      "accountNumber": "564738927",
+      "name": "Jane Doe",
+      "type": "Savings",
+      "balance": 7000,
+      "creationDate": "2021-01-10T10:00:00Z",
+      "lastTransactionDate": "2024-12-02T11:30:00Z"
+    },
+    {
+      "id": 40,
+      "customerId": 101,
+      "accountNumber": "756374658",
+      "name": "Jane Doe",
+      "type": "Mortgage",
+      "balance": -20000,
+      "creationDate": "2021-02-15T14:00:00Z",
+      "lastTransactionDate": "2024-11-28T13:45:00Z"
+    },
+    {
+      "id": 41,
+      "customerId": 101,
+      "accountNumber": "123456789",
+      "name": "Jane Doe",
+      "type": "Savings",
+      "balance": 5000,
+      "creationDate": "2020-05-15T08:30:00Z",
+      "lastTransactionDate": "2024-12-05T09:00:00Z"
+    },
+    {
+      "id": 42,
+      "customerId": 101,
+      "accountNumber": "567891234",
+      "name": "Jane Doe",
+      "type": "Mortgage",
+      "balance": -15000,
+      "creationDate": "2020-06-20T09:00:00Z",
+      "lastTransactionDate": "2024-11-30T10:00:00Z"
+    },
+    {
+      "id": 43,
+      "customerId": 101,
+      "accountNumber": "234567891",
+      "name": "Jane Doe",
+      "type": "Savings",
+      "balance": 7000,
+      "creationDate": "2021-01-10T10:00:00Z",
+      "lastTransactionDate": "2024-12-02T11:30:00Z"
+    },
+    {
+      "id": 44,
+      "customerId": 101,
+      "accountNumber": "536782918",
+      "name": "Jane Doe",
+      "type": "Mortgage",
+      "balance": -20000,
+      "creationDate": "2021-02-15T14:00:00Z",
+      "lastTransactionDate": "2024-11-28T13:45:00Z"
+    },
+    {
+      "id": 45,
+      "customerId": 101,
+      "accountNumber": "985674839",
+      "name": "Jane Doe",
+      "type": "Savings",
+      "balance": 5000,
+      "creationDate": "2020-05-15T08:30:00Z",
+      "lastTransactionDate": "2024-12-05T09:00:00Z"
+    },
+    {
+      "id": 46,
+      "customerId": 101,
+      "accountNumber": "875649287",
+      "name": "Jane Doe",
+      "type": "Mortgage",
+      "balance": -15000,
+      "creationDate": "2020-06-20T09:00:00Z",
+      "lastTransactionDate": "2024-11-30T10:00:00Z"
+    },
+    {
+      "id": 47,
+      "customerId": 101,
+      "accountNumber": "564738927",
+      "name": "Jane Doe",
+      "type": "Savings",
+      "balance": 7000,
+      "creationDate": "2021-01-10T10:00:00Z",
+      "lastTransactionDate": "2024-12-02T11:30:00Z"
+    },
+    {
+      "id": 48,
+      "customerId": 101,
+      "accountNumber": "756374658",
+      "name": "Jane Doe",
+      "type": "Mortgage",
+      "balance": -20000,
+      "creationDate": "2021-02-15T14:00:00Z",
+      "lastTransactionDate": "2024-11-28T13:45:00Z"
+    },
+    {
+      "id": 49,
+      "customerId": 101,
+      "accountNumber": "564738927",
+      "name": "Jane Doe",
+      "type": "Savings",
+      "balance": 7000,
+      "creationDate": "2021-01-10T10:00:00Z",
+      "lastTransactionDate": "2024-12-02T11:30:00Z"
+    },
+    {
+      "id": 50,
+      "customerId": 101,
+      "accountNumber": "756374658",
+      "name": "Jane Doe",
+      "type": "Mortgage",
+      "balance": -20000,
+      "creationDate": "2021-02-15T14:00:00Z",
+      "lastTransactionDate": "2024-11-28T13:45:00Z"
+    }
+  ]
+}
