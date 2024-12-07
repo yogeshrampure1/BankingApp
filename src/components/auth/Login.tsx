@@ -11,6 +11,7 @@ import {
 import { RootState } from "../store/store";
 import { validationSchema } from "../../utils/validation/LoginValidation";
 import styles from "./login.module.css";
+import { useEffect } from "react";
  
 const Login = () => {
   const dispatch = useDispatch();
@@ -30,6 +31,7 @@ const Login = () => {
       try { 
         const response = await axios.get("http://localhost:3000/login");
         let val = response.data?.filter(val => val.username === values.username && val.password === values.password)
+        console.log(val)
         if(val[0]) {
           dispatch(loginSuccess({ username: response.data.username }));
         } else {
@@ -41,6 +43,11 @@ const Login = () => {
       }
     },
   });
+
+  useEffect(() => {
+    sessionStorage.setItem('isAuthenticated',isAuthenticated)
+    console.log("login",isAuthenticated)
+  },[isAuthenticated])
 
   return (
     <div className={styles.login}>
