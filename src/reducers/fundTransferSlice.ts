@@ -5,7 +5,8 @@ interface FundTransferState {
   toAccount: string;
   amount: number;
   remarks: string;
-  status: string;
+  transactionStatus: string;
+  message: string;
 }
 
 const initialState: FundTransferState = {
@@ -13,7 +14,8 @@ const initialState: FundTransferState = {
   toAccount: '5678',
   amount: 0,
   remarks: '',
-  status: ''
+  transactionStatus: '',
+  message: ''
 };
 
 const fundTransferSlice = createSlice({
@@ -21,8 +23,9 @@ const fundTransferSlice = createSlice({
   initialState,
   reducers: {
     transferFunds: (state, action) => {
-        console.log("slice==",action.payload);
-        state.status = action.payload.status;
+        const {status, message} = action.payload;
+        state.transactionStatus = status;
+        state.message = message;
     }
   },
 });

@@ -8,9 +8,6 @@
 .form-error {
     color: #f00;
 }
-.dropdown {
-    width: 170px;  
-}
 .actions {
     margin: 0 auto;
 }
@@ -20,9 +17,10 @@
 div{
     padding: 10px;
 }
-.dropdown{
-    height: 30px;
+.form-input{
+    height: 30px !important;
+    width: 200px !important;  
 }
 .submit {
-    margin-left: 15px;
+    margin-left: 15px !important;
 }

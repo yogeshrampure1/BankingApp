@@ -13,16 +13,16 @@ import {
 import { transferFunds } from '../../actions/fundTransferActions';
 import { useAppDispatch } from '../../hooks/index';
 import { RootState } from '../store';
-// import Modal from '../../shared/modal';
+import Modal from '../../shared/modal';
 
 const FundTransferForm: React.FC = () => {
   const dispatch = useAppDispatch();
-  const { fromAccount, toAccount, status } = useSelector((state: RootState) => state.fundTransfer);
-  const [showModal, setModalStatus] = useState(false);
+  const { fromAccount, toAccount, transactionStatus } = useSelector((state: RootState) => state.fundTransfer);
+  const [showDialog, setShowDialog] = useState(false);
   useEffect(() => {
-    if(status.length)
-      setModalStatus(true)
-  },[status])
+    if(transactionStatus.length)
+      setShowDialog(true)
+  },[transactionStatus])
   
   const formik = useFormik({
     initialValues: {
@@ -39,9 +39,14 @@ const FundTransferForm: React.FC = () => {
     },
   });
 
+  const onModalClose = () => {
+    setShowDialog(false);
+    formik.resetForm();
+  };
+
   return (<>
     <h3 className="title">Fund Transfer</h3>
-    {/* {showModal ? <Modal status={status} /> : null} */}
+    {showDialog ? <Modal isOpen={showDialog} onClose={onModalClose} /> : null}
     <form className="form-container" onSubmit={formik.handleSubmit}>
       <Box mb={1} p={0}>
         <Grid2 container>
@@ -49,7 +54,7 @@ const FundTransferForm: React.FC = () => {
             <FormLabel>From Account</FormLabel>
           </Grid2>
           <Grid2 size={6}>
-            <Select size={'small'} className="dropdown" name="fromAccount" value={fromAccount} disabled>
+            <Select size={'small'} className='form-input' name="fromAccount" value={fromAccount} disabled>
               <option value="1234">1234(Savings)</option>
             </Select>
           </Grid2>
@@ -57,7 +62,7 @@ const FundTransferForm: React.FC = () => {
             <FormLabel>To Account</FormLabel>
           </Grid2>
           <Grid2 size={6}>
-            <Select size={'small'} className="dropdown" name="toAccount" value={toAccount} disabled>
+            <Select size={'small'} className='form-input' name="toAccount" value={toAccount} disabled>
               <option value="5678">5678(Mortgage)</option>
             </Select>
           </Grid2>
@@ -68,6 +73,7 @@ const FundTransferForm: React.FC = () => {
             <input
               type="text"
               name="amount"
+              className='form-input'
               onChange={formik.handleChange}
               value={formik.values.amount}
             />
@@ -80,6 +86,7 @@ const FundTransferForm: React.FC = () => {
           <input
             type="text"
             name="remarks"
+            className='form-input'
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             value={formik.values.remarks} />
