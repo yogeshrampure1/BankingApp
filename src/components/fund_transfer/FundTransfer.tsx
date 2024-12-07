@@ -10,9 +10,9 @@ import {
   FormLabel,
   Button,
 } from '@mui/material';
-import { RootState } from '@/store';
 import { transferFunds } from '../../actions/fundTransferActions';
 import { useAppDispatch } from '../../hooks/index';
+import { RootState } from '../store';
 
 const FundTransferForm: React.FC = () => {
   const dispatch = useAppDispatch();
