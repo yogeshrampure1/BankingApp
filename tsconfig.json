@@ -1,8 +1,6 @@
 {
-
-  "references": [
-  
-  ],
+  "files": [],
+  "references": [{ "path": "./tsconfig.app.json" }],
   "compilerOptions": {
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
