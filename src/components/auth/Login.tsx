@@ -49,7 +49,6 @@ const Login = () => {
 
   useEffect(() => {
     sessionStorage.setItem('isAuthenticated',isAuthenticated)
-
     console.log("login",isAuthenticated)
   },[isAuthenticated])
 
