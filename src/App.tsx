@@ -8,13 +8,12 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="login" element={<Login />} />
-        {user?.role === "customer" && (
+        <Route path="/login" element={<Login />} />
+        {/* {user?.role === "customer" && (
           <Route path="customer-dashboard" element={<CustsomerDashboard />} />
-        )}
-        <Route path="/" element={<Login />} />
+        )} */}
+        <Route path="/customer-dashboard" element={<CustsomerDashboard />} />
       </Routes>
-      <Login />
     </BrowserRouter>
   );
 }
