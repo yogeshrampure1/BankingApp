@@ -6,7 +6,7 @@ import Modal, { ModalStatus } from "../../shared/modal";
 const Login = () => {
   const [isModalOpen, setModalOpen] = useState(false);
   const [transactionStatus, setTransactionStatus] =
-    useState<ModalStatus>("success");
+    useState<ModalStatus>("error");
 
   const handleOpenModal = () => setModalOpen(true);
   const handleCloseModal = () => setModalOpen(false);
@@ -23,11 +23,13 @@ const Login = () => {
         <Modal
           isOpen={isModalOpen}
           onClose={handleCloseModal}
-          title={transactionStatus ? "Successful" : "Unsuccessful"}
-          status={transactionStatus}
+          title={
+            transactionStatus === "success" ? "Successful" : "Unsuccessful"
+          }
+          status={transactionStatus === "success" ? "success" : "error"}
         >
           <p>
-            {transactionStatus
+            {transactionStatus === "success"
               ? "Your transaction is Successful"
               : "Your transaction is unsuccessful. Please try again."}
           </p>
