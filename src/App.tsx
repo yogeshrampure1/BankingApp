@@ -1,17 +1,41 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import React, { useState } from "react";
 import Login from "./components/auth/Login";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+import PrivateRoute from "./routes/PrivateRoute";
+import Header from "./components/header/Header";
+import "./App.css";
+
 import CustomerDashboard from "./components/dashboard/CustomerDashboard/CustomerDashboard";
+import FundTransferForm from "./components/fund_transfer/FundTransfer";
 
 function App() {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
   return (
-    <BrowserRouter>
+    <Router>
       <Routes>
+        {/* <Route path="/login" element={<Login onLogin={() => setIsAuthenticated(true)} />} /> */}
         <Route path="/login" element={<Login />} />
-        <Route path="/customer-dashboard" element={<CustomerDashboard />} />
-        <Route path="login" element={<Login />} />
         <Route path="/" element={<Login />} />
+
+        <Route
+          path="/dashboard"
+          element={
+            <PrivateRoute isAuthenticated={isAuthenticated}>
+              <CustomerDashboard />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/fundtransfer"
+          element={
+            <PrivateRoute isAuthenticated={isAuthenticated}>
+              <FundTransferForm />
+            </PrivateRoute>
+          }
+        />
       </Routes>
-    </BrowserRouter>
+    </Router>
   );
 }
 

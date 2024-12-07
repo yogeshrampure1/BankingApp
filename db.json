@@ -6,7 +6,7 @@
       "accountNumber": "123456789",
       "name": "Jane Doe",
       "type": "Savings",
-      "balance": 5000,
+      "balance": 50000,
       "creationDate": "2020-05-15T08:30:00Z",
       "lastTransactionDate": "2024-12-05T09:00:00Z"
     },
