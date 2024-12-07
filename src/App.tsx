@@ -10,7 +10,7 @@ import CustomerDashboard from "./components/dashboard/CustomerDashboard/Customer
 import FundTransferForm from "./components/fund_transfer/FundTransfer";
 
 function App() {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(true);
   return (
     <Router>
       <Routes>
@@ -22,7 +22,10 @@ function App() {
           path="/dashboard"
           element={
             <PrivateRoute isAuthenticated={isAuthenticated}>
-              <CustomerDashboard />
+              <>
+                <Header userName="Sundar" />
+                <CustomerDashboard />
+              </>
             </PrivateRoute>
           }
         />
@@ -30,7 +33,10 @@ function App() {
           path="/fundtransfer"
           element={
             <PrivateRoute isAuthenticated={isAuthenticated}>
-              <FundTransferForm />
+              <>
+                <Header userName="Sundar" />
+                <FundTransferForm />
+              </>
             </PrivateRoute>
           }
         />
