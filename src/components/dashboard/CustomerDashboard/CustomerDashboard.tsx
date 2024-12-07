@@ -1,9 +1,11 @@
 //Developer : Malarkodi J
 
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { Table, Form, InputGroup, Button } from "react-bootstrap";
 import debounce from "lodash.debounce";
 import { FaSort, FaSortUp, FaSortDown } from "react-icons/fa";
+import MockData from "./MockData.json";
 
 interface Account {
   id: number;
@@ -30,6 +32,8 @@ interface SortConfig {
 }
 
 const CustomerDashboard: React.FC = () => {
+  const navigate = useNavigate();
+
   const [accounts, setAccounts] = useState<Account[]>([]);
   const [filteredAccounts, setFilteredAccounts] = useState<Account[]>([]);
   const [search, setSearch] = useState<string>("");
@@ -44,8 +48,11 @@ const CustomerDashboard: React.FC = () => {
 
   const fetchAccounts = async (): Promise<void> => {
     try {
-      const response = await fetch(`http://localhost:3001/accounts`);
-      const data = await response.json();
+      // const response = await fetch(`http://localhost:3001/accounts`);
+      // const data = await response.json();
+
+      //MockData for overall demo
+      const data = MockData.accounts;
 
       setAccounts(data);
       setFilteredAccounts(data);
@@ -61,10 +68,14 @@ const CustomerDashboard: React.FC = () => {
         account.type.toLowerCase().includes(query.toLowerCase()) ||
         account.accountNumber.includes(query)
     );
-
-    setFilteredAccounts(filteredData);
-    setTotalPages(Math.ceil(filteredData.length / rowsPerPage));
     setCurrentPage(1);
+    setFilteredAccounts(
+      filteredData.slice(
+        (currentPage - 1) * rowsPerPage,
+        currentPage * rowsPerPage
+      )
+    );
+    setTotalPages(Math.ceil(filteredData.length / rowsPerPage));
   }, 500);
 
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>): void => {
@@ -81,7 +92,7 @@ const CustomerDashboard: React.FC = () => {
   };
 
   useEffect(() => {
-    let updatedAccounts = [...filteredAccounts];
+    let updatedAccounts = [...accounts];
 
     updatedAccounts = updatedAccounts.sort((a, b) => {
       const { key, direction } = sortConfig;
@@ -108,22 +119,27 @@ const CustomerDashboard: React.FC = () => {
       return 0;
     });
 
-    setTotalPages(Math.ceil(updatedAccounts.length / rowsPerPage));
     setFilteredAccounts(
       updatedAccounts.slice(
         (currentPage - 1) * rowsPerPage,
         currentPage * rowsPerPage
       )
     );
-  }, [sortConfig, currentPage, rowsPerPage]);
+
+    setFilteredAccounts(
+      updatedAccounts.slice(
+        (currentPage - 1) * rowsPerPage,
+        currentPage * rowsPerPage
+      )
+    );
+  }, [accounts, sortConfig, search, currentPage, rowsPerPage]);
 
   const handlePageChange = (pageNumber: number): void => {
     setCurrentPage(pageNumber);
   };
 
   const handleTransfer = () => {
-    // Implement transfer functionality
-    alert("Transfer button clicked!");
+    navigate("/fund-transfer");
   };
 
   useEffect(() => {
