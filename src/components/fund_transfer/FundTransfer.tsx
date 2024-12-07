@@ -58,7 +58,7 @@ const FundTransferForm: React.FC = () => {
     <Button onClick={handleBack}>Back to Home</Button>
     <h3 className="title">Fund Transfer</h3>
     </div>
-    
+
     {showDialog ? <Modal isOpen={showDialog} onClose={onModalClose} /> : null}
     <form className="form-container" onSubmit={formik.handleSubmit}>
       <Box mb={1} p={0}>
@@ -68,7 +68,7 @@ const FundTransferForm: React.FC = () => {
           </Grid2>
           <Grid2 size={6}>
             <Select size={'small'} className='form-input' name="fromAccount" value={fromAccount} disabled>
-              <option value={fromAccount}>123456789(Savings)</option>
+              <option value={fromAccount}>{fromAccount}(Savings)</option>
             </Select>
           </Grid2>
           <Grid2 size={6}>
@@ -76,7 +76,7 @@ const FundTransferForm: React.FC = () => {
           </Grid2>
           <Grid2 size={6}>
             <Select size={'small'} className='form-input' name="toAccount" value={toAccount} disabled>
-              <option value={toAccount}>567891234(Mortgage)</option>
+              <option value={toAccount}>{fromAccount}(Mortgage)</option>
             </Select>
           </Grid2>
           <Grid2 size={6}>
