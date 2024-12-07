@@ -7,6 +7,7 @@ import Header from "./components/header/Header";
 import "./App.css";
 
 import CustomerDashboard from "./components/dashboard/CustomerDashboard/CustomerDashboard";
+import FundTransferForm from "./components/fund_transfer/FundTransfer";
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -29,7 +30,7 @@ function App() {
           path="/fundtransfer"
           element={
             <PrivateRoute isAuthenticated={isAuthenticated}>
-              'fundtransfer'
+              <FundTransferForm />
             </PrivateRoute>
           }
         />

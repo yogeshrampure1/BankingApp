@@ -1,0 +1,26 @@
+.form-container {
+    width: 60%;
+    margin: 0 auto;
+    border: 1px solid #ddd;
+    padding: 20px;
+}
+
+.form-error {
+    color: #f00;
+}
+.actions {
+    margin: 0 auto;
+}
+.title{
+    text-align: center;
+}
+div{
+    padding: 10px;
+}
+.form-input{
+    height: 30px !important;
+    width: 250px !important;  
+}
+.submit {
+    margin-left: 15px !important;
+}
